@@ -31,7 +31,7 @@ const Navbar = () => {
       <img
         id="darkm"
         className='cursor-pointer relative right-6'
-        src="src/assets/icons8-dark-mode-50 (2).png"
+        src="src/assets/asd.png"
         alt={isInverted ? "darkmode" : "lightmode"}
         onClick={handleClick}
         style={{ filter: isInverted ? 'invert(1)' : 'none' }}
