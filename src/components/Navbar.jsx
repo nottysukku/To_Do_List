@@ -5,7 +5,7 @@ const Navbar = () => {
 
   // Function to handle toggle
   const handleClick = () => {
-    const newInvertedState = !isInverted;
+    const newInvertedState = isInverted;
     setIsInverted(newInvertedState);
 
     // Update body styles based on the new state
