@@ -1,21 +1,26 @@
-import React from 'react'
+import React from 'react';
 
 const Navbar = () => {
   const [isInverted, setIsInverted] = React.useState(true);
 
-  
+  // Function to handle toggle
   const handleClick = () => {
-    setIsInverted(!isInverted);
-    document.body.style.backgroundColor = isInverted ? '#1a202c' : 'rgb(140, 178, 225)';
-    document.body.style.color = isInverted ? 'black' : 'initial';
-    document.getElementById('lol').style.backgroundColor = isInverted ? '#C8A1E0' : 'rgb(191 219 254)';
-  }
+    const newInvertedState = !isInverted;
+    setIsInverted(newInvertedState);
 
-  
- 
+    // Update body styles based on the new state
+    document.body.style.backgroundColor = newInvertedState ? '#1a202c' : 'rgb(140, 178, 225)';
+    document.body.style.color = newInvertedState ? 'black' : 'initial';
+    
+    // Find element and update its background color
+    const lolElement = document.getElementById('lol');
+    if (lolElement) {
+      lolElement.style.backgroundColor = newInvertedState ? '#C8A1E0' : 'rgb(191 219 254)';
+    }
+  };
 
   return (
-    <nav className='flex justify-between align-middle bg-blue-400 text-white py-2 pr-16 '>
+    <nav className='flex justify-between align-middle bg-blue-400 text-white py-2 pr-16'>
       <div className="logo">
         <span className='font-bold text-xl mx-8'>TaskBook</span>
       </div>
@@ -23,9 +28,16 @@ const Navbar = () => {
         <li className='text-2xl cursor-pointer hover:font-bold transition-all'>Tasks</li>
         <li onClick={() => window.open("https://www.github.com/nottysukku", "_blank")} className='text-2xl cursor-pointer hover:font-bold transition-all'>About Us</li>
       </ul>
-      <img className='cursor-pointer relative right-6' src="src\assets\icons8-dark-mode-50.png" alt="darkmode" onClick={handleClick} style={{ filter: isInverted ? 'invert(1)' : 'none' }}></img>
+      <img
+        id="darkm"
+        className='cursor-pointer relative right-6'
+        src="src/assets/icons8-dark-mode-50.png"
+        alt={isInverted ? "lightmode" : "darkmode"}
+        onClick={handleClick}
+        style={{ filter: isInverted ? 'invert(1)' : 'none' }}
+      />
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
