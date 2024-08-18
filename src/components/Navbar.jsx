@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Navbar = () => {
-  const [isInverted, setIsInverted] = React.useState(true);
+  const [isInverted, setIsInverted] = React.useState(false);
 
   // Function to handle toggle
   const handleClick = () => {
     const newInvertedState = isInverted;
-    setIsInverted(newInvertedState);
+    setIsInverted(!newInvertedState);
 
     // Update body styles based on the new state
     document.body.style.backgroundColor = newInvertedState ? '#1a202c' : 'rgb(140, 178, 225)';
