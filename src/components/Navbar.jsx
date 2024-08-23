@@ -13,21 +13,18 @@ const Navbar = () => {
     document.body.style.backgroundColor = newInvertedState ? '#1a202c' : 'rgb(140, 178, 225)';
     document.body.style.color = newInvertedState ? 'black' : 'initial';
     lolElement.style.backgroundColor = newInvertedState ? '#C8A1E0' : 'rgb(191 219 254)';
-    
-    
-    
   };
 
   return (
-    <nav className='flex justify-between align-middle bg-blue-400 text-white py-2 pr-16'>
+    <nav className='flex flex-wrap justify-between items-center bg-blue-400 text-white py-2 px-4'>
       <div className="logo">
-        <span className='font-bold text-xl mx-8'>TaskBook</span>
+        <span className='font-bold text-xl mx-2 sm:mx-4'>TaskBook</span>
       </div>
-      <ul className="flex gap-8 mx-9">
-        <li className='text-2xl cursor-pointer hover:font-bold transition-all'>Tasks</li>
+      <ul className="flex gap-4 mx-4 lg:mx-8 flex-1 justify-center ">
+        <li className='text-lg sm:text-2xl cursor-pointer hover:font-bold transition-all'>Tasks</li>
         <li 
           onClick={() => window.open("https://www.github.com/nottysukku", "_blank")} 
-          className='text-2xl cursor-pointer hover:font-bold transition-all'
+          className='text-lg sm:text-2xl cursor-pointer hover:font-bold transition-all'
         >
           About Us
         </li>
@@ -35,10 +32,10 @@ const Navbar = () => {
       {/* SVG Icon for Dark/Light Mode Toggle */}
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        width="28" 
-        height="28" 
+        width="24" 
+        height="24" 
         viewBox="0 0 32 32"
-        className='cursor-pointer relative right-6' 
+        className='cursor-pointer' 
         onClick={handleClick} 
         style={{ filter: isInverted ? 'invert(1)' : 'none', fill: 'currentColor', transition: 'filter 0.3s' }}
       >
